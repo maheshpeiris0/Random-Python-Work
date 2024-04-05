@@ -7,5 +7,8 @@ df['end_timestamp'] = pd.to_datetime(df['end_timestamp'], unit='ms',utc=True).dt
 print(df['event_type'].count())
 print(df['volume'].sum())
 print(df['end_timestamp'].max())
-print()
-print(df.columns)
+print(df['open'].min())
+print(df['close'].max())
+print(df['high'].max())
+
+print(df['close'].max())
