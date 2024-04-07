@@ -11,7 +11,7 @@ dict ={'Symbol':df['symbol'].iloc[0],'Return':price_return,'Close':df['close'].i
 
 
 file_path = '/workspaces/Random-Python-Work/2024/March/RandomValuesGenerations/stock_by_key'
-print(os.listdir(file_path))
+
 
 inner_folder =['return_5%', 'return_10%', 'other']
 
