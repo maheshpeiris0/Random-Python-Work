@@ -28,6 +28,7 @@ def google_sheet_return_updated(folder_path):
             print(f"Error: {e}")
             continue
     final_df = pd.DataFrame(final_list)
+    final_df = final_df.fillna("")
     secret_name = "secret_name"
     region_name = "us-east-1"
 
