@@ -28,7 +28,7 @@ def google_sheet_return_updated(folder_path):
             print(f"Error: {e}")
             continue
     final_df = pd.DataFrame(final_list)
-    secret_name = "my-google-github-sa"
+    secret_name = "secret_name"
     region_name = "us-east-1"
 
     session = boto3.session.Session()
@@ -48,8 +48,8 @@ def google_sheet_return_updated(folder_path):
     secret = get_secret_value_response['SecretString']
     key_data = json.loads(secret)
     gc = gspread.service_account_from_dict(key_data)
-    sht1 = gc.open_by_key('1dsYt-kroqo9neVpV_VeJewNIt-mOzTdrPUq6nx5-Z-w')
-    worksheet = sht1.worksheet("Returns")
+    sht1 = gc.open_by_key('sheet_id')
+    worksheet = sht1.worksheet("Returns") #sheet name
     worksheet.clear()
     worksheet.update([final_df.columns.values.tolist()] + final_df.values.tolist())
     
