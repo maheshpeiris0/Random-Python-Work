@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
 def lambda_handler(event, context):
-    # Sample data
+
     X = np.array([1, 2, 3, 4, 5,6]).reshape(-1, 1)
     y = np.array([2, 4, 5, 4, 6,7])
 
